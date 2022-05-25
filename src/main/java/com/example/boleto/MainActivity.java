@@ -16,6 +16,25 @@ public class MainActivity extends AppCompatActivity {
     private String destino;
     private TextView lblDatos;
     private EditText etEdad;
+    private Button btnCerrar;
+    private Button btnLimpiar;
+
+    private void Cerrar(){
+        AlertDialog.Builder confirmar=new AlertDialog.Builder(this);
+        confirmar.setTitle("¿Cerrar APP?");
+        confirmar.setMessage("Se descartara toda la informacion ingresada");
+        confirmar.setPositiveButton("Confirmar",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialogInterface, int i){
+                finish();
+            }
+        });
+        confirmar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialogInterface, int i){
+
+            }
+        });
+        confirmar.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         radioButton2=(RadioButton) findViewById(R.id.rbDoble);
         lblDatos=(TextView) findViewById(R.id.lblBoletoDatos);
         etEdad=(EditText) findViewById(R.id.txtEdad);
+        btnCerrar=(Button) findViewById(R.id.btnCerrar);
+        btnLimpiar=(Button) findViewById(R.id.btnLimpiar);
         ArrayAdapter<String> Adaptador=new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_expandable_list_item_1,getResources().getStringArray(R.array.paises));
         spnPaises.setAdapter(Adaptador);
         spnPaises.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -61,6 +82,18 @@ public class MainActivity extends AppCompatActivity {
                         +"\nImpuesto: $"+boleto.calcularImpuesto()+
                         "\nDescuento: $"+boleto.calcularDescuento(edad)+
                         "\nTotal a pagar: $"+boleto.calcularTotal(boleto.calcularDescuento(edad)));
+            }
+        });
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Cerrar();
+            }
+        });
+        btnLimpiar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                etNombre.setText("");
+                etEdad.setText("");
+                lblDatos.setText("");
             }
         });
     }
