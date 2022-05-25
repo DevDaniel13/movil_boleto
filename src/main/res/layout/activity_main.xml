@@ -102,7 +102,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     ></TextView>
-
+                <Button
+                    android:id="@+id/btnLimpiar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Limpiar datos" />
+                <Button
+                    android:id="@+id/btnCerrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cerrar" />
             </LinearLayout>
         </ScrollView>
 
