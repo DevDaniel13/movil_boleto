@@ -1,6 +1,9 @@
 package com.example.boleto;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
 import android.view.View;
 import android.widget.*;
 import android.os.Bundle;
