@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Boleto</string>
+    <string name="app_name">Boleto2</string>
     <string-array name="paises">
         <item> Argentina </item>
         <item>Mexico </item>
@@ -13,7 +13,10 @@
         <item>Malasia </item>
     </string-array>
     <string name="lblPaises"> Seleccione un pais</string>
+    <string name="lblNum">Capture el no. de boleto</string>
     <string name="lblNombre">Capture el nombre</string>
     <string name="lblEdad">Capture la edad</string>
-    <string name="lblFecha">Seleccione la fecha</string>
+    <string name="lblPrecio">Capture el precio</string>
+    <string name="lblViaje">Seleccione el tipo de viaje</string>
+    <string name="lblFecha">Capture la fecha</string>
 </resources>
