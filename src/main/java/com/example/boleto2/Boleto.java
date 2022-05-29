@@ -1,21 +1,17 @@
 package com.example.boleto2;
 
-import java.util.Scanner;
-
 public class Boleto {
     
     private int id;
     private String nombre;
-    private int edad;
     private String destino;
     private int viaje;
     private double precio;
     private String fecha;
     
-    public Boleto(int id, String nombre, int edad, String destino, int viaje, double precio, String fecha){
+    public Boleto(int id, String nombre, String destino, int viaje, double precio, String fecha){
         this.id = id;
         this.nombre = nombre;
-        this.edad = edad;
         this.destino = destino;
         this.viaje = viaje;
         this.precio = precio;
@@ -33,12 +29,6 @@ public class Boleto {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-    public int getEdad() {
-        return edad;
-    }
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
     public String getDestino() {
         return destino;
@@ -78,8 +68,8 @@ public class Boleto {
         double impuesto = this.getPrecio()*0.16;
         return impuesto;
     }
-    public double calcularDescuento(){
-        if(this.getEdad() >= 60){
+    public double calcularDescuento(int edad){
+        if(edad >= 60){
             double descuento = this.getPrecio()*0.5;
             return descuento;
         }else{
