@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity {
                     }else if (rbDoble.isChecked() == true){
                         viaje = 2;
                     }
-                    Boleto b = new Boleto(id, nombre, edad, destino, viaje, precio, fecha);
+                    Boleto b = new Boleto(id, nombre, destino, viaje, precio, fecha);
                     double subtotal = b.calcularSubtotal();
                     double impuesto = b.calcularImpuesto();
-                    double descuento = b.calcularDescuento();
+                    double descuento = b.calcularDescuento(edad);
                     double total = b.calcularTotal(subtotal, impuesto, descuento);
                     lblDatos.setText(b.Imprimir(subtotal, impuesto, descuento, total));
                 }
